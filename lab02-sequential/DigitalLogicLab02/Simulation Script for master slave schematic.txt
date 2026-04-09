@@ -1,0 +1,31 @@
+# ***** restart the simulation *****
+restart -force
+delete wave *
+
+# ***** add colored signals *****
+add wave -color yellow    /master_slave_jk/Rst
+add wave -color red       /master_slave_jk/x1
+add wave /master_slave_jk/x2
+add wave /master_slave_jk/x3
+add wave /master_slave_jk/x4
+add wave -color blue      /master_slave_jk/J
+add wave -color orange    /master_slave_jk/k
+add wave -color magenta   /master_slave_jk/QMaster
+add wave -color magenta   /master_slave_jk/Q2jk
+
+force /master_slave_jk/Rst 0 0ns, 1 10ns
+force /master_slave_jk/x1  0 0ns, 1 10ns -repeat 20ns
+
+# safe sequence only
+# 000 -> hold
+# 101 -> set
+# 100 -> hold
+# 001 -> reset
+# 110 -> hold
+
+force /master_slave_jk/x2 0 0ns, 1 25ns, 1 45ns, 0 65ns, 1 85ns
+force /master_slave_jk/x3 0 0ns, 0 25ns, 0 45ns, 0 65ns, 1 85ns
+force /master_slave_jk/x4 0 0ns, 1 25ns, 0 45ns, 1 65ns, 0 85ns
+
+run 120ns
+wave zoom full

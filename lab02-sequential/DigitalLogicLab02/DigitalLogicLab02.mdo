@@ -1,0 +1,19 @@
+if {![file exists "C:/KTU/SEMESTER 2/First Principal of Digital Logic/Lattice Diamond/DigitalLogicLab02/DigitalLogicLab02.mpf"]} { 
+	project new "C:/KTU/SEMESTER 2/First Principal of Digital Logic/Lattice Diamond/DigitalLogicLab02" DigitalLogicLab02
+	project addfile "C:/KTU/SEMESTER 2/First Principal of Digital Logic/Lattice Diamond/impl1/master_slave_jk.vhd"
+	project addfile "C:/KTU/SEMESTER 2/First Principal of Digital Logic/Lattice Diamond/impl1/static_jk.vhd"
+	project addfile "C:/KTU/SEMESTER 2/First Principal of Digital Logic/Lattice Diamond/impl1/Dynamic_jk.vhd"
+	vlib  work
+	vdel -lib work -all 
+	vlib work
+	vcom -work work "C:/KTU/SEMESTER 2/First Principal of Digital Logic/Lattice Diamond/impl1/master_slave_jk.vhd"
+	vcom -work work "C:/KTU/SEMESTER 2/First Principal of Digital Logic/Lattice Diamond/impl1/static_jk.vhd"
+	vcom -work work "C:/KTU/SEMESTER 2/First Principal of Digital Logic/Lattice Diamond/impl1/Dynamic_jk.vhd"
+} else {
+	project open "C:/KTU/SEMESTER 2/First Principal of Digital Logic/Lattice Diamond/DigitalLogicLab02/DigitalLogicLab02"
+	project compileoutofdate
+}
+vsim -voptargs=+acc -L work -L pmi_work -L ovi_xp2  DYNAMIC_JK
+view wave
+add wave /*
+run 1000ns

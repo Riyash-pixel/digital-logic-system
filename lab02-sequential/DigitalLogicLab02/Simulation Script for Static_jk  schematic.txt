@@ -1,0 +1,28 @@
+restart -force
+delete wave *
+
+add wave -color red Rst
+add wave -color yellow x1
+add wave x2
+add wave x3
+add wave x4
+add wave -bin {X {x2 x3 x4}}
+add wave -color blue J
+add wave -color blue k
+add wave -color white Qjk
+
+force x1  0 0ns, 1 10ns -repeat 20ns
+force Rst 0 0ns, 1 8ns
+
+;# 000 -> hold
+;# 101 -> set
+;# 100 -> hold
+;# 001 -> reset
+;# 110 -> hold
+
+force x2  0 0ns, 1 25ns, 1 45ns, 0 65ns, 1 85ns
+force x3  0 0ns, 0 25ns, 0 45ns, 0 65ns, 1 85ns
+force x4  0 0ns, 1 25ns, 0 45ns, 1 65ns, 0 85ns
+
+run 140 ns
+wave zoom full

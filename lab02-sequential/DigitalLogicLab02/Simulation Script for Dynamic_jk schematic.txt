@@ -1,0 +1,29 @@
+# ***** restart the simulation *****
+restart -force
+delete wave *
+
+# ***** add signals *****
+add wave -color yellow Rst
+add wave -color red    x1
+add wave -color white  x2
+add wave -color white  x3
+add wave -color white  x4
+add wave -color lime   j
+add wave -color orange k
+add wave -color cyan QDin
+
+# ***** clock and reset *****
+# In the handout example, the synchronisation is inverse, so x1 starts high
+force -freeze x1 1 0ns, 0 25ns -repeat 50ns
+force -freeze Rst 0 0ns, 1 10ns
+
+# ***** dynamic-trigger test *****
+# Same base sequence as the example, but with x2 second high level delayed
+# from 220 ns to 240 ns to highlight the dynamic-trigger difference
+
+force -freeze x2 1 0ns, 0 70ns, 1 240ns, 0 320ns, 1 370ns
+force -freeze x3 1 0ns, 0 70ns, 1 170ns, 0 370ns
+force -freeze x4 0 0ns, 1 120ns, 0 170ns, 1 270ns, 0 370ns
+
+run 500ns
+wave zoom full
