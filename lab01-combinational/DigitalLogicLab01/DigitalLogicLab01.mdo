@@ -1,0 +1,15 @@
+if {![file exists "C:/KTU/SEMESTER 2/First Principal Oof Digital Logic/Lattice Diamond/DigitalLogicLab01/DigitalLogicLab01.mpf"]} { 
+	project new "C:/KTU/SEMESTER 2/First Principal Oof Digital Logic/Lattice Diamond/DigitalLogicLab01" DigitalLogicLab01
+	project addfile "C:/KTU/SEMESTER 2/First Principal Oof Digital Logic/Lattice Diamond/impl1/DigitalLogicLab01.vhd"
+	vlib  work
+	vdel -lib work -all 
+	vlib work
+	vcom -work work "C:/KTU/SEMESTER 2/First Principal Oof Digital Logic/Lattice Diamond/impl1/DigitalLogicLab01.vhd"
+} else {
+	project open "C:/KTU/SEMESTER 2/First Principal Oof Digital Logic/Lattice Diamond/DigitalLogicLab01/DigitalLogicLab01"
+	project compileoutofdate
+}
+vsim -voptargs=+acc -L work -L pmi_work -L ovi_xp2  DIGITALLOGICLAB01
+view wave
+add wave /*
+run 1000ns

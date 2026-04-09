@@ -1,0 +1,48 @@
+# ============================================
+# Restart simulation
+# ============================================
+restart -force
+
+# Remove old waves
+delete wave *
+
+# ============================================
+# Add input signals
+# ============================================
+add wave a b c d e f
+
+# Show inputs as a 6-bit number
+add wave -color blue -unsigned {A_F {a b c d e f}}
+
+# Add output
+add wave -color yellow F1
+add wave -color magenta F2
+add wave -color pink F3
+# ============================================
+# Generate ALL combinations (0–63)
+# ============================================
+
+# f — fastest changing bit
+force f 0 0ns, 1 10ns -repeat 20ns
+
+# e
+force e 0 0ns, 1 20ns -repeat 40ns
+
+# d
+force d 0 0ns, 1 40ns -repeat 80ns
+
+# c
+force c 0 0ns, 1 80ns -repeat 160ns
+
+# b
+force b 0 0ns, 1 160ns -repeat 320ns
+
+# a — slowest changing bit
+force a 0 0ns, 1 320ns -repeat 640ns
+
+# ============================================
+# Run simulation long enough for all 64 cases
+# ============================================
+run 650ns
+
+wave zoom full

@@ -1,0 +1,81 @@
+m255
+K4
+z2
+!s12c _opt1
+Z0 !s99 nomlopt
+!s12c _opt
+R0
+!s11e vcom 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/KTU/SEMESTER 2/First Principal Oof Digital Logic/Lattice Diamond/DigitalLogicLab01
+T_opt
+!s110 1772013496
+V_N6dD@NhlD?;ceoBV`D4T0
+Z2 04 17 9 work digitallogiclab01 schematic 1
+=1-a8595f8982ee-699ec7b6-202-7500
+R0
+Z3 !s12f OEM25U1 
+Z4 !s12b OEM100
+Z5 !s124 OEM100
+Z6 !s135 nogc
+Z7 o-quiet -auto_acc_if_foreign -work work -L work -L pmi_work -L ovi_xp2 +acc
+Z8 tCvgOpt 0
+n@_opt
+Z9 OL;O;2024.2;79
+R1
+T_opt1
+!s110 1772433869
+VScXb6kVQ6`MnDK^3if3^_1
+R2
+=1-a8595f8982ee-69a531cc-ea-c70
+R0
+R3
+R4
+R5
+R6
+R7
+R8
+n@_opt1
+R9
+Edigitallogiclab01
+Z10 w1772013377
+Z11 DPx3 xp2 10 components 0 22 Rhna[W3nLHHXA_n@oa=Yo3
+Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z13 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R1
+Z14 8C:/KTU/SEMESTER 2/First Principal Oof Digital Logic/Lattice Diamond/impl1/DigitalLogicLab01.vhd
+Z15 FC:/KTU/SEMESTER 2/First Principal Oof Digital Logic/Lattice Diamond/impl1/DigitalLogicLab01.vhd
+l0
+L8 1
+VfdMfm]YK69<[F@`TU>=[<0
+!s100 CNNF0S[gfZ5`OG1M7@<A:0
+Z16 OL;C;2024.2;79
+32
+Z17 !s110 1772433866
+!i10b 1
+!i113 0
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
+Aschematic
+R11
+R12
+R13
+DEx4 work 17 digitallogiclab01 0 22 fdMfm]YK69<[F@`TU>=[<0
+!i122 0
+l173
+L21 260
+VWjY@mRRd1[Mj`@295?AFP1
+!s100 G8H7S3Y]Zo<BddOiRQ:eD2
+R16
+32
+R17
+!i10b 1
+!i113 0
+R18
+R19
